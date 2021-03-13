@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ACCUEIL</title>
+</head>
+<body>
+
+<!--    {% for intendant in intendants %}-->
+
+<!--        <p>{{ intendant.nom }}</p>-->
+
+<!--    {% endfor %}-->
+
+    {% for article in derniers_articles %}
+       <h3>{{ article.nom }}</h3>
+    {% endfor %}
+
+    <form method="POST" action="{% url "blog_liste" %}" >
+        {% csrf_token %}
+
+    <label>NOM</label><input type="text" name="nom">
+    <label>PASSWORD</label><input type="password" name="password">
+                        <input type="submit" value="Envoyer">
+
+    </form>
+
+
+</body>
+</html>
